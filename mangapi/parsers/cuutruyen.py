@@ -17,9 +17,9 @@ from __future__ import annotations
 import logging
 from typing import Any
 
-from core.base_parser import BaseParser
-from core.http import fetch_html, cache_meta, cache_chapter, cache_list
-from models.schemas import (
+from ..core.base_parser import BaseParser
+from ..core.http import fetch_html, cache_meta, cache_chapter, cache_list
+from ..models.schemas import (
     MangaDetail, MangaCard, ChapterBrief, ChapterPages, Genre, MangaListing
 )
 
