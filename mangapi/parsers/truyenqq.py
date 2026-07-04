@@ -42,12 +42,12 @@ class TruyenqqParser(BaseParser):
 
     async def get_manga(self, slug: str) -> MangaDetail:
         # TruyenQQ URL dạng /truyen-tranh/slug.html hoặc /slug
-        url = f"{self.BASE_URL}/truyen-tranh/{slug}.html"
+        url = f"{self.BASE_URL}/truyen-tranh/{slug}"
         try:
             html = await fetch_html(url, referer=self.BASE_URL, cache_pool=cache_meta)
         except RuntimeError:
             # Fallback không có .html
-            url = f"{self.BASE_URL}/{slug}"
+            url = f"{self.BASE_URL}/truyen-tranh/{slug}"
             html = await fetch_html(url, referer=self.BASE_URL, cache_pool=cache_meta)
         soup = BeautifulSoup(html, "lxml")
         return self._parse_manga_detail(soup, slug, url)
