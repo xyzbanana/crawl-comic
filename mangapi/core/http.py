@@ -86,7 +86,7 @@ async def fetch_html(
     async with httpx.AsyncClient(
         timeout=20,
         follow_redirects=True,
-        http2=True,
+        http2=False,
     ) as client:
         for attempt in range(1, retries + 1):
             # Random delay tránh rate-limit
