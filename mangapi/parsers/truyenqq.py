@@ -33,7 +33,7 @@ class TruyenqqParser(BaseParser):
     # ── Search ─────────────────────────────────────────────────────────────
 
     async def search(self, query: str, page: int = 1) -> list[MangaCard]:
-        url = f"{self.BASE_URL}/tim-kiem.html?keyword={quote_plus(query)}&page={page}"
+        url = f"{self.BASE_URL}/tim-kiem?q={quote_plus(query)}&page={page}"
         html = await fetch_html(url, referer=self.BASE_URL, cache_pool=cache_meta)
         soup = BeautifulSoup(html, "lxml")
         return self._parse_card_list(soup)
