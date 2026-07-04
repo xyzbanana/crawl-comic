@@ -6,10 +6,12 @@ from __future__ import annotations
 from ..core.base_parser import BaseParser
 from ..parsers.nettruyen import NettruyenParser
 from ..parsers.truyenqq import TruyenqqParser
+from ..parsers.cuutruyen import CuutruyenParser
 
 _REGISTRY: dict[str, BaseParser] = {
     "nettruyen": NettruyenParser(),
     "truyenqq":  TruyenqqParser(),
+    "cuutruyen": CuutruyenParser(),
 }
 
 
