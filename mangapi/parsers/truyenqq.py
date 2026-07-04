@@ -27,7 +27,7 @@ logger = logging.getLogger("mangapi.truyenqq")
 
 class TruyenqqParser(BaseParser):
     SOURCE       = "truyenqq"
-    BASE_URL     = "https://truyenqqvip.com"
+    BASE_URL     = "https://truyenqqko.com"
     DISPLAY_NAME = "TruyenQQ"
 
     # ── Search ─────────────────────────────────────────────────────────────
