@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mangapi
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: ALLOWED_ORIGINS
+        value: ""   # Điền domain frontend của bạn vào đây
+    healthCheckPath: /health
+    autoDeploy: true
